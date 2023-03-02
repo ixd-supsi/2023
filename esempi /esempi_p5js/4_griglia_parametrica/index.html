@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Griglia Parametrica (p5js)</title>
+	<style>
+		body {
+			background-color: lightgray;
+			margin: 0;
+			padding: 20px;
+		}
+	</style>	
+</head>
+<body>
+
+	<script>
+		function setup(){
+			createCanvas(400, 400)
+		}
+
+		function draw(){
+			background(255,0,0)
+
+			// noStroke()
+			// fill(255,255,0)
+
+			noFill()
+			stroke(255,255,0)
+
+			const passoX = 30
+			const passoY = passoX * sqrt(3) / 2
+			const diametro = mouseX
+
+			const numX = floor(width / passoX) - 1
+			const numY = floor(height / passoY) - 1
+			const margineX = (width - (numX - 1) * passoX) / 2 - passoX / 4
+			const margineY = (height - (numY - 1) * passoY) / 2
+			for(let j=0; j<numY; j++) {
+				for(let i=0; i<numX; i++) {
+					const cx = margineX + i * passoX + passoX/2 * (j % 2)
+					const cy = margineY + j * passoY
+					circle(cx, cy, diametro)
+				}
+			}
+
+			/*
+			for(let i=0; i<numX; i++) {
+				const cx = margineX + i * passo
+				circle(cx, 70, 20)
+			}
+
+			for(let i=0; i<numX; i++) {
+				const cx = margineX + i * passo
+				circle(cx, 100, 20)
+			}
+			*/
+		}
+
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+</body>
+</html>
