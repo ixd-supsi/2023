@@ -19,13 +19,38 @@
 
 	<script>
 
+		let acceso = false
+		
 		function setup(){
 			createCanvas(400, 400)			
 		}
-		
-		function draw(){
 
-			background(255,0,0)
+		function mousePressed() {
+			// if (acceso == true) {
+			// 	acceso = false
+			// } else {
+			// 	acceso = true
+			// }
+
+			// if (acceso) {
+			// 	acceso = false
+			// } else {
+			// 	acceso = true
+			// }
+
+			acceso = !acceso			
+		}
+		
+		function draw(){		
+			if ( acceso ){
+				background(100)
+				fill(255) // acceso
+			} else {
+				background(0)
+				fill(60)  // spento
+			}
+			
+			noStroke()
 			ellipse(200, 200, 120, 120)	
 		}
 
