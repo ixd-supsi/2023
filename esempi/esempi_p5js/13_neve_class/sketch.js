@@ -5,7 +5,6 @@ const margine = 50
 
 function setup() {
 	createCanvas(500, 500)
-
 	for (let i=0; i<1000; i++) {
 		fiocchi.push(new Fiocco(random(width), random(-margine, height)))
 	}
