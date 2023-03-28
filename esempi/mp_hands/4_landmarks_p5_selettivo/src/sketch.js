@@ -4,7 +4,7 @@ let detector
 let emoji
 
 function preload() {
-	emoji = loadImage("ugly_emoji.png")
+	emoji = loadImage("ugly_emoji_pix.png")
 }
 
 async function setup() {
@@ -18,7 +18,7 @@ async function setup() {
 	console.log("Carico modello...")
 	detector = await createDetector()
 	console.log("Modello caricato.")
-		
+
 }
 
 async function draw() {
