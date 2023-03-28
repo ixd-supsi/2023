@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: white; /* white, #FFFFFF */
+	padding: 0;
+	margin: 0;
+	font-family: "Times New Roman", Times, serif;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+h1 {
+	margin: 3rem 0 0 1rem;
+}
+
+h4 {
+	margin: 1rem 0 1rem 0;
+}
+
+.contenitore {
+	display: flex;
+}
+
+header{
+	padding: 0 1em 0 1em;
+	background-color: lightblue;
+	height:100vh;
+}
+
+.copertina {
+	width:100vw;
+}
+
+section {
+	padding: 0 1rem 0 1rem;
+	border-left: solid 1px black;
+	height:100vh;
+}
+
+.titolo-sezione {
+	margin-bottom: 1em;
+}
+
+.contenuto-sezione {
+	width: 600px;
+}
+
+.contenuto-sezione p{
+	width: 75%;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
