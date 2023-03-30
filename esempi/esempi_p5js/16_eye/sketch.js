@@ -1,5 +1,5 @@
 
-let eyes = []
+const eyes = []
 
 function setup(){
 	createCanvas(800, 600)	
@@ -25,14 +25,16 @@ function setup(){
 }
 
 function draw(){
-	
-	
-	
-	for (let j=0; j<10; j++) {
-		for (let i=0; i<10; i++) {
-			const o = (floor(frameCount/3) + i + j) % eyes.length
-			image(eyes[o], i * 100, j * 75, 100, 75)
+	const w = 200 / 2.5
+	const h = 150 / 2.5
+	const numX = width / w
+	const numY = height / h
+	for (let j=0; j<numY; j++) {
+		for (let i=0; i<numX; i++) {
+			//const o = (floor(frameCount/3) + i + j) % eyes.length
+			const d = constrain(dist(i, j, mouseX/w, mouseY/h), 0, 14) * 2
+			const o = floor(d) % eyes.length
+			image(eyes[o], i * w, j * h, w, h)
 		}
 	}
-		
 }
