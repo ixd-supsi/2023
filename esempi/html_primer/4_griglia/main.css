@@ -1,0 +1,85 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 2em;	
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(235,98,37);
+}
+
+.griglia {
+	max-width: 30em;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 0.5em;
+	row-gap: 0.5em;
+	border: rgba(255, 255, 255, 0.5) solid 0.5px;
+}
+
+.cella {
+	/* border: white solid 1px; */
+	min-height: 4em;
+}
+
+.s2 {
+	grid-column: span 2;
+}
+
+.s3 {
+	grid-column: span 3;
+}
+
+.s4 {
+	grid-column: span 4;
+}
+
+h2 {
+	margin: 0;
+	font-size: 4em;
+}
+
+.anim {
+	color: black;
+	transition: font-size 1000ms;
+}
+
+.anim:hover {
+	color: white;	
+	font-size: 0.5em; 
+}
+
+.bottom {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+/* -- breakpoint: schermi piccoli, larghezza massima 600 pixel -- */
+
+@media only screen and (max-width: 600px) {
+
+	body {
+		margin: 0.5em;
+		background-color: royalblue;
+	}
+
+	.s2, .s3, .s4 {
+		grid-column: span 1;
+	}
+
+	.griglia {
+		grid-template-columns: 1fr;
+	}
+
+	.cella {
+		/* border: white solid 1px; */
+		min-height: unset;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 2em;
+	}	
+}
