@@ -39,7 +39,7 @@ async function draw() {
 			const indiceB  = manoB.keypoints[8]
 			const polliceB = manoB.keypoints[4]
 
-			strokeWeight(5)
+			strokeWeight(10)
 			stroke(255, 0, 0)
 			noFill()
 			beginShape()
