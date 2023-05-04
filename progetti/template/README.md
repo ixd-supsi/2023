@@ -26,7 +26,7 @@ Facilisis magna etiam tempor orci eu. Felis donec et odio pellentesque diam volu
 Nunc consequat interdum varius sit amet mattis vulputate. Vehicula ipsum a arcu cursus vitae congue. Odio ut sem nulla pharetra. Accumsan lacus vel facilisis volutpat est velit egestas dui id. Quisque egestas diam in arcu cursus. Eget nulla facilisi etiam dignissim diam. Aenean sed adipiscing diam donec adipiscing tristique. Porttitor massa id neque aliquam. Sem viverra aliquet eget sit amet tellus cras. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Lacus sed turpis tincidunt id aliquet risus feugiat.
 
 
-```
+```JavaScript
 const image = new Image();
 image.onload = () => {
 	gl.bindTexture(gl.TEXTURE_2D, texture);
