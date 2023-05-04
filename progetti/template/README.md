@@ -1,11 +1,11 @@
-SUPSI 2022-23
-Corso d’interaction design, CV427.01
-Docenti: A. Gysin, G. Profeta
+SUPSI 2022-23  
+Corso d’interaction design, CV427.01  
+Docenti: A. Gysin, G. Profeta  
 
-Elaborato 1: Marionetta digitale
+Elaborato 1: Marionetta digitale  
 
 # SuperMarionetta
-Autore: Hans Manon
+Autore: Hans Manon  
 [https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks](MediaPipe demo - ES6)
 
 
