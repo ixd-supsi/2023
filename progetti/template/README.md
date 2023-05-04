@@ -6,7 +6,7 @@ Elaborato 1: Marionetta digitale
 
 # SuperMarionetta
 Autore: Hans Manon  
-[https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks](MediaPipe demo - ES6)
+[MediaPipe demo-ES6](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
 
 ## Introduzione e tema
