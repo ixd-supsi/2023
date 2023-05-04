@@ -4,7 +4,7 @@ Docenti: A. Gysin, G. Profeta
 
 Elaborato 1: Marionetta digitale  
 
-# SuperMarionetta
+# Titolo progetto
 Autore: Hans Manon  
 [MediaPipe demo-ES6](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
