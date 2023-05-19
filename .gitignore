@@ -26,6 +26,7 @@ Temporary Items
 .apdisk
 
 # Visual Studio Code
+settings.json
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
