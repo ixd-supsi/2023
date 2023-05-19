@@ -95,10 +95,9 @@ function draw(){
     }
 }
 
-function playNota(nota, ottava) {    
-    const att = 0.05 // attack
-    const del = 0.05 // delay
-    const sus = 0.3  // sustain
-    const rel = 0.2  // release
-    synth.play(nota + ottava, att, del, sus, rel)
+function playNota(nota, ottava) {        
+    const att = 0.05  // attack
+    const sus = 0.30  // sustain
+    const rel = 0.20  // release
+    synth.play(nota + ottava, att, 0, sus, rel)
 }
