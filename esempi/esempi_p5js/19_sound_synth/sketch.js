@@ -38,8 +38,8 @@ const EGYPT = [
     "G",
 ]
 
-const scala = PENTATONICA_MIN
-// const scala = EGYPT
+const scala = EGYPT
+// const scala = PENTATONICA_MIN
 // const scala = PENTATONICA_MAJ
 
 let ultimaColonna = -1
