@@ -1,5 +1,4 @@
 function setup(){
-    // Questa funzione crea un canvas di 400x400 pixel
     createCanvas(windowWidth, windowHeight)
     background(255)
 }
@@ -9,14 +8,14 @@ function windowResized(){
 }
 
 function draw(){
-    
+
     //if (mouseIsPressed) {
         const passoX = 100
         const passoY = 50
         const colonna = floor(mouseX / passoX)
         const riga = floor(mouseY / passoY)
-        const grigliaX = colonna * passoX    
-        const grigliaY = riga * passoY    
+        const grigliaX = colonna * passoX
+        const grigliaY = riga * passoY
         fill (random(255),random(255),random(255))
         rect (grigliaX, grigliaY, passoX, passoY)
         fill(255)
