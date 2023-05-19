@@ -1,6 +1,5 @@
-let polySynth;
 
-const scalaCromatica = [
+const CROMATICA = [
     'A',
     'A#',
     'B',
@@ -15,67 +14,91 @@ const scalaCromatica = [
     'G#',
 ]
 
-const scalaIo = [
-    "A", 
-    "B",
+const PENTATONICA_MAJ = [
+    "A",
+    "C",
+    "D",
+    "E",
+    "G",
+]
+
+const PENTATONICA_MIN = [
+    "A#", 
     "C", 
-    "D", 
-    "E", 
+    "D#", 
     "F", 
     "G", 
 ]
 
-const scala = scalaIo
+const EGYPT = [
+    "A#",
+    "C",
+    "D",
+    "F",
+    "G",
+]
+
+const scala = PENTATONICA_MIN
+// const scala = EGYPT
+// const scala = PENTATONICA_MAJ
+
+let ultimaColonna = -1
+let synth
+let reverb
 
 function setup(){    
     createCanvas(windowWidth, windowHeight)
+    
     background(255)
+    noStroke()
 
     userStartAudio()
-
-    polySynth = new p5.PolySynth()
+    reverb = new p5.Reverb()
+    synth = new p5.MonoSynth()
+    synth.disconnect()
+    synth.connect(reverb)
 }
 
 function windowResized(){
     resizeCanvas(windowWidth, windowHeight)
 }
 
-let ultimaColonna = -1
-
 function draw(){       
-    const passoX = 40    
-    const colonna = floor(mouseX / passoX)  
-    if (ultimaColonna != colonna) {  
-        const grigliaX = colonna * passoX    
-        fill (random(255),random(255),random(255))
-        rect (grigliaX, 0, passoX, height)
-
+    const suddivisioni = 36
+    const passoX   = Math.floor(width / suddivisioni)
+    const colonna  = floor(mouseX / passoX)  
+    const grigliaX = colonna * passoX   
+    
+    if (ultimaColonna != colonna) {         
         
-        let nota = colonna % scala.length
-        let ottava = Math.floor(colonna / scala.length)
+        if (mouseIsPressed) {
+            // Sound
+            const nota = colonna % scala.length
+            const ottava = 3 + Math.floor(colonna / scala.length)
+            const w = constrain(mouseY / height, 0, 1);
+            reverb.drywet(w)
+            playNota(scala[nota], ottava)
 
-        playNota(scala[nota], 4 + ottava)
 
+            // Disegno
+            const r = nota / scala.length * 128  + ottava * 16
+            const b = mouseY / height * 255 
+            fill (r, 0, b)
+            rect (grigliaX, 0, passoX, height)
+        } else {
+            fill(colonna / suddivisioni * 255)
+            rect (grigliaX, 0, passoX, height)
+        }
+
+        // Evitiamo il souno continuo
         ultimaColonna = colonna
     }
 }
 
-function mousePressed() {
-    const passoX = 20    
-    const colonna = floor(mouseX / passoX)    
-    const grigliaX = colonna * passoX    
-    fill (random(255),random(255),random(255))
-    rect (grigliaX, 0, passoX, height)
-
-    
-    let nota = colonna % scala.length
-    let ottava = Math.floor(colonna / scala.length)
-
-    playNota(scala[nota], 4 + ottava)
-}
-
 function playNota(nota, ottava) {    
-    let dur = 0.3
-    let vel = 0.1
-    polySynth.play(nota + ottava, vel, 0, dur)
+    const att = 0.05 // attack
+    const del = 0.05 // delay
+    const sus = 0.3  // sustain
+    const rel = 0.2  // release
+    synth.play(nota + ottava, att, del, sus, rel)
 }
