@@ -13,6 +13,9 @@ function load_menu(){
         },
         {
             "link": "2023"
+        },
+        {
+            "link": 2024
         }
     ]
 
